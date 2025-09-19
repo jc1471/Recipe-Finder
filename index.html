@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Finder</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1 id="title">What we eating tonight?</h1>
 
     <div class="search">
-      <form class="search-bar" action="/search" method="post">
+      <form class="search-form" id="search-form" action="/search" method="post">
         <label for="search" class="search-bar filter">
           <input
             type="text"
             placeholder="Search by ingredient, cuisine, etc..."
+            id="search-input"
           />
         </label>
 
@@ -29,13 +30,31 @@
         </label>
 
         <fieldset>
-            <legend>Dietary Requirements?</legend>
-            <label><input type="checkbox" name="dietary-requirements" value="1">1</label><br>
-            <label><input type="checkbox" name="dietary-requirements" value="2">2</label><br>
-            <label><input type="checkbox" name="dietary-requirements" value="3">3</label><br>
+          <legend>Dietary Requirements?</legend>
+          <label
+            ><input
+              type="checkbox"
+              name="dietary-requirements"
+              value="1"
+            />1</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="dietary-requirements"
+              value="2"
+            />2</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="dietary-requirements"
+              value="3"
+            />3</label
+          ><br />
         </fieldset>
 
-        <button type="submit" class="submit">Search</button>
+        <button type="submit" id="submit-btn">Search</button>
       </form>
     </div>
   </body>

@@ -12,7 +12,7 @@ div.search {
   margin-inline: 20px;
 }
 
-form.search-bar {
+form.search-form {
   display: flex;
   flex-direction: column;
   align-items: center;
