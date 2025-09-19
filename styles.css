@@ -1,6 +1,10 @@
+/* UNIVERSAL */
+
 h1 {
   color: red;
 }
+
+/* SEARCH BAR */
 
 div.search {
   background-color: gray;
@@ -17,9 +21,13 @@ form.search-bar {
 
 label.search-bar {
   border: 1px solid blue;
-
+  margin-block: 8px;
 }
 
 label.filter {
-    align-items: end;
+  align-items: end;
+}
+
+button.submit {
+  margin-top: 15px;
 }
