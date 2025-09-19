@@ -1,10 +1,10 @@
-//console.log("Working");
-
 // ---------- Define Variables -----------//
 
 const textInput = document.getElementById("search-input");
 const submitBtn = document.getElementById("submit-btn");
 const form = document.querySelector("#search-form");
+const formBlock = document.querySelector("div.search");
+const cardContainer = document.createElement("div");
 
 let keywordsArray = [];
 
@@ -14,11 +14,7 @@ const searchByCategory =
   "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
 const searchByRandom = "www.themealdb.com/api/json/v1/1/random.php";
 
-//
-// Use promise.allSettled() to get results of
-// every part of search process before pushing
-// recipe objects to array
-//
+// ----------Define Functions ------------//
 
 // Fetch function that can be called for x items in array
 async function fetchAndParse(url) {
@@ -70,8 +66,27 @@ async function searchRecipesByKeywords() {
   }
 }
 
+function renderCard(meal) {
+  console.log(`${meal.strMeal} card created`);
+  // render p elements with text content taking from meal object
+  const card = document.createElement("div");
+  card.classList.add("card");
+  const name = document.createElement("p");
+  name.textContent = meal.strMeal;
+  card.appendChild(name);
+
+  const flag = document.createElement("span");
+  flag.textContent = meal.strArea;
+  card.appendChild(flag);
+
+  // Append to parent
+  cardContainer.appendChild(card);
+}
+
+// ---------- Run Program ----------------- //
+
 // Form input handler
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   console.log("Input: ", textInput.value);
 
@@ -79,5 +94,23 @@ form.addEventListener("submit", (event) => {
   keywordsArray.push(...textInput.value.split(" "));
   console.log("Keywords Array: ", keywordsArray);
 
-  searchRecipesByKeywords();
+  const mealsArray = await searchRecipesByKeywords();
+  console.log("Meals array looks like this: ", mealsArray);
+
+  // Show Results Section
+
+  // Hide form and show reset button
+  const resetBtn = document.createElement("button");
+  resetBtn.textContent = "New Search";
+  formBlock.appendChild(resetBtn);
+  form.style.display = "none";
+
+  // Create a div with grid functionality
+
+  cardContainer.classList.add("card-container");
+  formBlock.after(cardContainer);
+  // Loop through results array to create cards
+  mealsArray.forEach((meal) => {
+    renderCard(meal);
+  });
 });

@@ -30,3 +30,15 @@ label.filter {
 button.submit {
   margin-top: 15px;
 }
+
+.card-container {
+  margin: 15px;
+  border: 2px purple solid;
+  display: grid;
+}
+
+.card {
+  background-color: beige;
+  border: 1px black solid;
+  box-shadow: 5px;
+}
