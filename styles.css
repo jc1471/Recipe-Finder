@@ -1,0 +1,25 @@
+h1 {
+  color: red;
+}
+
+div.search {
+  background-color: gray;
+  border-radius: 100px;
+  margin-inline: 20px;
+}
+
+form.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 30px;
+}
+
+label.search-bar {
+  border: 1px solid blue;
+
+}
+
+label.filter {
+    align-items: end;
+}
