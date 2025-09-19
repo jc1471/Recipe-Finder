@@ -20,38 +20,89 @@
           />
         </label>
 
-        <label for="dietary-requirements" class="search-bar dropdown">
-          <select name="dietary-requirements" multiple>
-            <option value="" disabled selected>Dietary Requirements?</option>
-            <option typle="checkbox" value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </label>
+        <fieldset class="category">
+          <legend>Category</legend>
+          <label
+            ><input
+              type="checkbox"
+              name="category"
+              value="dessert"
+            />Dessert</label
+          ><br />
+          <label
+            ><input type="checkbox" name="category" value="side" />Side</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="category"
+              value="starter"
+            />Starter</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="category"
+              value="breakfast"
+            />Breakfast</label
+          >
+        </fieldset>
 
-        <fieldset>
-          <legend>Dietary Requirements?</legend>
+        <fieldset class="cuisine">
+          <legend>Cuisine</legend>
           <label
             ><input
               type="checkbox"
-              name="dietary-requirements"
-              value="1"
-            />1</label
+              name="cuisine"
+              value="american"
+            />American</label
           ><br />
           <label
             ><input
               type="checkbox"
-              name="dietary-requirements"
-              value="2"
-            />2</label
+              name="cuisine"
+              value="british"
+            />British</label
           ><br />
           <label
             ><input
               type="checkbox"
-              name="dietary-requirements"
-              value="3"
-            />3</label
+              name="cuisine"
+              value="chinese"
+            />Chinese</label
           ><br />
+        </fieldset>
+
+        <fieldset class="dietary-requirements">
+          <legend>Dietary Restrictions</legend>
+          <label
+            ><input
+              type="checkbox"
+              name="dietary-restrictions"
+              value="vegan"
+            />Vegan</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="dietary-restrictions"
+              value="vegetarian"
+            />Vegetarian</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="dietary-restrictions"
+              value="dairy-free"
+            />Dairy Free</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="dietary-restrictions"
+              value="gluten-free"
+            />Gluten Free</label
+          >
         </fieldset>
 
         <button type="submit" id="submit-btn">Search</button>
